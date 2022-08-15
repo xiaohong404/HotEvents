@@ -1,6 +1,6 @@
 # HotEvents
 
-## 1.登陆服务器获取github项目
+## 1.登录服务器获取github项目
 git clone git@github.com:xiaohong404/HotEvents.git
 
 ## 2.进入项目文件夹
