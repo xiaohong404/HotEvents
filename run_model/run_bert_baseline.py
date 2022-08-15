@@ -39,37 +39,7 @@ class BERTBase(object):
         )
 
     def train(self):
-        # 训练数据
-        train = {
-            'text': [' 测试good',
-                     '美团 学习',
-                     ' 测试good',
-                     '美团 学习',
-                     ' 测试good',
-                     '美团 学习',
-                     ' 测试good',
-                     '美团 学习'],
-            'target': [0, 1, 0, 1, 0, 1, 0, 1],
-        }
-
-        # Get text values and labels
-        text_values = train['text']
-        labels = train['target']
-
-        print('Original Text: ', text_values[0])
-        print('labels: ', labels[0])
-        print('Tokenized Ids: ', self.bert_tokenizer.encode(text_values[0], add_special_tokens=True))
-        print('Tokenized Text: ', self.bert_tokenizer.decode(self.bert_tokenizer.encode(text_values[0], add_special_tokens=True)))
-        print('Token IDs: ', self.bert_tokenizer.convert_tokens_to_ids(self.bert_tokenizer.tokenize(text_values[0])))
-
-        # 加载数据，返回DataLoader
-        self.logger.info("Loading data ...")
-        # train_dataloader = self.bert_dataloader.load_data(
-        #     self.args.train_data_path, self.args.per_device_train_batch_size, is_train=True
-        # )
-        # dev_dataloader = self.bert_dataloader.load_data(
-        #     self.args.dev_data_path, self.args.per_device_train_batch_size, is_train=False
-        # )
+        # 加载数据
         train_dataloader, dev_dataloader = self.bert_dataloader.load_data(
             self.args.train_data_path, self.args.per_device_train_batch_size, is_train=True
         )
