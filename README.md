@@ -8,6 +8,7 @@ cd HotEvents
 
 ## 3.从服务器公共文件夹复制所需文件
 cp -rf /data/dl4nlp/pretrain_model ./
+
 cp /data/dl4nlp/HotEvents/bert_base_hotevents.pk ./data/model/bert_baseline/
 
 ## 4.运行文件
